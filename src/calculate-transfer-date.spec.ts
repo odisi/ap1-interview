@@ -1,7 +1,9 @@
 import { TransferDate } from "./calculate-transfer-date";
+import { DefaultHolidayProvider } from "./utils/default-holiday-provider";
 
 describe("TransferDate", () => {
-  const transferDate = new TransferDate();
+  const holidayProvider = new DefaultHolidayProvider;
+  const transferDate = new TransferDate(holidayProvider);
 
   // Função para formatar as datas, afim de realizar os testes de maneira mais simples
   function getDateOnly(date: Date): string {
